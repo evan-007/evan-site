@@ -1,0 +1,5 @@
+section {
+  &.section.centered {
+    @include outer-container;
+  }
+}

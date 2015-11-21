@@ -6,6 +6,11 @@ set :images_dir, 'images'
 
 activate :bourbon
 activate :neat
+activate :directory_indexes
+
+configure :development do
+  activate :livereload
+end
 
 configure :build do
   # For example, change the Compass output style for deployment
