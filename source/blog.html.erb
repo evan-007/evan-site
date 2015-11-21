@@ -1,0 +1,12 @@
+---
+title: Blog index
+---
+
+<section class="section centered">
+  <div>
+    <h1>Posts</h1>
+    <% blog.articles.each do |article| %>
+      <%= link_to article.title, article.url %>
+    <% end %>
+  </div>
+</section>

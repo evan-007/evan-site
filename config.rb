@@ -1,16 +1,14 @@
 set :css_dir, 'stylesheets'
-
 set :js_dir, 'javascripts'
-
 set :images_dir, 'images'
 
-activate :bourbon
-activate :neat
-activate :directory_indexes
-
-configure :development do
-  activate :livereload
+activate :blog do |blog|
+  blog.sources = '/blog/{year}-{month}-{day}-{title}.html'
 end
+activate :bourbon
+activate :directory_indexes
+activate :neat
+
 
 configure :build do
   # For example, change the Compass output style for deployment
@@ -27,6 +25,10 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+end
+
+configure :development do
+  activate :livereload
 end
 
 # load rails_assets for frontend deps
