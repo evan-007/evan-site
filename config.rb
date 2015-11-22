@@ -9,11 +9,17 @@ activate :bourbon
 activate :directory_indexes
 activate :dotenv
 activate :neat
+activate :syntax, line_numbers: true
+
+set :markdown_engine, :redcarpet
+set :markdown, :fenced_code_blocks => true, :smartypants => true
+
 
 page "/404.html", directory_index: false
 
 
 configure :build do
+  activate :syntax
   # For example, change the Compass output style for deployment
   activate :minify_css
 
@@ -61,4 +67,3 @@ after_configuration do
     end
   end
 end
-
