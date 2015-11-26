@@ -4,6 +4,7 @@ set :images_dir, 'images'
 
 activate :blog do |blog|
   blog.sources = '/blog/{year}-{month}-{day}-{title}.html'
+  blog.layout = 'blog_layout'
 end
 activate :bourbon
 activate :directory_indexes
