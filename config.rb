@@ -6,10 +6,8 @@ activate :blog do |blog|
   blog.sources = '/blog/{year}-{month}-{day}-{title}.html'
   blog.layout = 'blog_layout'
 end
-activate :bourbon
 activate :directory_indexes
 activate :dotenv
-activate :neat
 activate :syntax, line_numbers: true
 
 set :markdown_engine, :redcarpet
