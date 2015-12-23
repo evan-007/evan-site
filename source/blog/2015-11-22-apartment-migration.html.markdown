@@ -8,6 +8,7 @@ If you ever need to migrate from a single-tenanted rails app to an
 [apartment](https://github.com/influitive/apartment) multitenanted app,
 here's one way to make `pg_dump` and `pg_restore` do all of the work.
 
+READMORE
 This is assuming:
 
 * There are multiple instance of the rails app
