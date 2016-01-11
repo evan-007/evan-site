@@ -2,6 +2,8 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
+ignore '/stylesheets/pygments.scss.erb'
+
 activate :blog do |blog|
   blog.sources = '/blog/{year}-{month}-{day}-{title}.html'
   blog.layout = 'blog_layout'

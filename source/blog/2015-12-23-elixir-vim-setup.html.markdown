@@ -2,7 +2,6 @@
 title: Elixir Vim Setup
 date: 2015-12-23 22:28 UTC
 tags:
-published: false
 ---
 
 Elixir is pretty slick and easy to use with vim.
