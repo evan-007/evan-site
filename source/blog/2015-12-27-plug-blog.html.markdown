@@ -1,0 +1,93 @@
+---
+title: Building a blog with elixir plug
+date: 2015-12-27 14:48 UTC
+tags:
+---
+
+Building a basic webapp with plug and ecto.
+
+READMORE
+
+Elixir already has a log of tooling for sinatra-esque sites.
+Since the phoenix framework is basically a whole bunch of plugs, I found it
+useful to build a simple site with just the basics before diving into a
+larger framework.
+
+# Setup
+
+Written for elixir `1.05`.
+
+Use mix to create a project with a supervisor: `mix new blog --sup`.
+
+Add `cowboy` and `plug` for a webserver and `ecto` for postgres.
+
+```elixir
+defmodule Blog.Mixfile do
+  use Mix.Project
+
+  def project do
+    [app: :blog,
+     version: "0.0.1",
+     elixir: "~> 1.0",
+     build_embedded: Mix.env == :prod,
+     start_permanent: Mix.env == :prod,
+     deps: deps]
+  end
+
+  def application do
+    [applications: [:logger, :cowboy, :plug, :postgrex, :ecto],
+     mod: {Blog, []}]
+  end
+
+  defp deps do
+    [
+      {:cowboy, "~> 1.0.0"},
+      {:plug, "~> 1.0"},
+      {:postgrex, "~> 0.0"},
+      {:ecto, "~> 1.1"},
+    ]
+  end
+end
+```
+
+Run `mix deps.get` to install everything.
+
+Create a basic router to serve a `hello world` page.
+
+```elixir
+# lib/blog/router.ex
+defmodule Blog.Router do
+  use Plug.Router
+  plug :match
+  plug :dispatch
+
+  get "/" do
+    send_resp(conn, 200, "hello world")
+  end
+end
+```
+
+To setup the app to run the webserver, we need to configure the `Application.start`:
+
+```elixir
+defmodule Blog do
+  use Application
+
+  def start(_type, _args) do
+    import Supervisor.Spec, warn: false
+
+    children = [
+      # Define workers and child supervisors to be supervised
+      # worker(Blog.Worker, [arg1, arg2, arg3])
+    ]
+
+    opts = [strategy: :one_for_one, name: Blog.Supervisor]
+
+    Supervisor.start_link(children, opts)
+    {:ok, _} = Plug.Adapters.Cowboy.http Blog.Router, []
+  end
+end
+```
+
+Then running `iex -S mix` will startup a server on `localhost:4000` and we'll
+see `hello world`.
