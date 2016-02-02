@@ -2,15 +2,18 @@
   "projects": [
     {
       "name": "some project",
-      "short_desc": "whatever"
+      "short_desc": "whatever",
+      "link": "/projects/pair"
     },
     {
       "name": "some other one",
-      "short_desc": "whatever asdf"
+      "short_desc": "whatever asdf",
+      "link": "/projects/pair"
     },
     {
       "name": "some other one",
-      "short_desc": "whatever asdf"
+      "short_desc": "whatever asdf",
+      "link": "/projects/pair"
     }
   ]
 }

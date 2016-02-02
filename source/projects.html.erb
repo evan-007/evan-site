@@ -5,7 +5,7 @@ title: evan's projects
   <h2>Here's some of the things I've done recently, either for fun or for learning:</h2>
   <div class="grid-items-lines">
     <% data.work.projects.each do |project| %>
-    <a href="javascript:void(0)" class="grid-item">
+    <a href="<%= project.link %>" class="grid-item">
       <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1_dark.png" alt="">
       <h1><%= project.name %></h1>
       <p><%= project.short_desc %></p>
