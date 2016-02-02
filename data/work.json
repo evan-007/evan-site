@@ -1,0 +1,16 @@
+{
+  "projects": [
+    {
+      "name": "some project",
+      "short_desc": "whatever"
+    },
+    {
+      "name": "some other one",
+      "short_desc": "whatever asdf"
+    },
+    {
+      "name": "some other one",
+      "short_desc": "whatever asdf"
+    }
+  ]
+}
