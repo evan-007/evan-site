@@ -1,19 +1,22 @@
 {
   "projects": [
     {
-      "name": "some project",
-      "short_desc": "whatever",
-      "link": "/projects/pair"
+      "name": "Pair Programing Site",
+      "short_desc": "An angular/rails experiment",
+      "link": "/projects/pair",
+      "date": "late 2014"
     },
     {
-      "name": "some other one",
-      "short_desc": "whatever asdf",
-      "link": "/projects/pair"
+      "name": "react guitar chords",
+      "short_desc": "Render chord charts and audio with react",
+      "link": "/projects/react-guitar-chords",
+      "date": "summer 2015"
     },
     {
-      "name": "some other one",
-      "short_desc": "whatever asdf",
-      "link": "/projects/pair"
+      "name": "Something in elixir",
+      "short_desc": "coming soon!",
+      "link": "/",
+      "date": "early 2016"
     }
   ]
 }
