@@ -92,3 +92,31 @@ end
 
 Then running `iex -S mix` will startup a server on `localhost:4000` and we'll
 see `hello world`.
+
+# Outside-in development
+
+Now that the project is serving a simple page, it's time to start thinking about
+database integration. We'll be using postgres, but before we start doing
+anything, let's write some tests.
+
+[Hound](https://github.com/HashNuke/hound) is a browser automation tool that
+we'll be using to write e2e tests with selenium. Add it to the project and
+`mix deps.get`.
+
+```elixir
+# mix.exs
+def application do
+  [applications: [:logger, :cowboy, :plug, :postgrex, :ecto, :hound],
+   mod: {Blog, []}]
+end
+
+defp deps do
+  [
+    {:cowboy, "~> 1.0.0"},
+    {:ecto, "~> 1.1"},
+    {:hound, "~> 0.7.4"},
+    {:plug, "~> 1.0"},
+    {:postgrex, "~> 0.0"},
+  ]
+end
+```
