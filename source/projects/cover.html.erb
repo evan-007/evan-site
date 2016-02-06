@@ -1,0 +1,37 @@
+---
+title: Cover App
+---
+<section class="section centered">
+  <div>
+    <h1>Group project for upcase</h1>
+    <h2>
+      <a href='https://github.com/ajkamel/cover'><i class="fa fa-github fa-3x"></i></a>
+    </h2>
+    <p>
+      Cover was a group project that I worked on with two other developers from
+      <%= link_to 'Upcase', 'www.upcase.com' %> as a learning project.
+    </p>
+    <p>
+      The spec was relatively straight-forward, but it was a chance to
+      pair program with some new people and I learned quite a bit.
+    </p>
+    <p>
+      Here is <%= link_to 'one PR', 'https://github.com/ajkamel/cover/pull/17/files'  %>
+      that I worked on.
+    </p>
+    <h3>Takeaways</h3>
+    <p>
+      For me, the big value was in seeing how other developers approach TDD.
+      Since I've spent a lot of time as the sole developer on projects, I tend to
+      go overboard with my test coverage sometime. One of the people I paired with
+      was very sensitive to test duplication and only writing tests if there is a
+      reasonable chance that the feature could be broken.
+    </p>
+    <p>
+      <%= link_to 'Here\'s an example', 'https://github.com/ajkamel/cover/pull/20/files#diff-955c51844f31b51f452cbca650a8bf48R14' %> where we added a delegate, but did not test
+      it explicitly since it was implicitly tested in the feature spec by the
+      implementation in the view. I think I still prefer the explicit unit test, but
+      it's an interesting approach.
+    </p>
+  </div>
+</section>

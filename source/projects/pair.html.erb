@@ -3,9 +3,30 @@ title: Pair Programming
 ---
 <section class="section centered">
   <div>
-    <h1>A Pair Programming Social Site</h1>
+    <h1>Pair Programming Social Site</h1>
+    <h2>
+      <a href='https://github.com/evan-007/pair-program'><i class="fa fa-github fa-3x"></i></a>
+      <%= link_to 'Demo', 'http://tranquil-tor-7118.herokuapp.com/#/' %>
+    </h2>
     <p>
-      Todo: fill this out
+      Because every rails dev needs to build at least 1 social network, right?
+    </p>
+    <p>
+      This site was an expiriment to see how building a separate frontend
+      in angular would turn out. I used gulp to build the angular app into rail's
+      public folder, although I probably would not do that again to decrease
+      coupling of the two pieces.
+    </p>
+    <p>
+      The main takeaway for me was rolling my own token auth, which is probably not
+      very secure, but an interesting experiment to see how all of the pieces fit
+      together.
+    </p>
+    <p>
+      My main issue with building an app like this is the large amount of boilerplate
+      it takes to get started with the frontend architecture, assets, and testing.
+      If I was doing this again, I would probably try it with ember since the cli
+      and conventions mean less work for me to get started.
     </p>
   </div>
 </section>

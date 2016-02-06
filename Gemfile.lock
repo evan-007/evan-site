@@ -66,6 +66,8 @@ GEM
     fog-xml (0.1.2)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
+    font-awesome-middleman (4.5.0)
+      middleman-core (~> 3.0)
     formatador (0.2.5)
     haml (4.0.7)
       tilt
@@ -198,6 +200,7 @@ PLATFORMS
 DEPENDENCIES
   bitters
   bourbon
+  font-awesome-middleman
   mdl
   middleman (~> 3.4.0)
   middleman-blog

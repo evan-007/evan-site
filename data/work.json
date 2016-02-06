@@ -1,6 +1,12 @@
 {
   "projects": [
     {
+      "name": "Cover",
+      "short_desc": "A group project for thoughtbot's Upcase service",
+      "link": "/projects/cover",
+      "date": "late 2015"
+    },
+    {
       "name": "Pair Programing Site",
       "short_desc": "An angular/rails experiment",
       "link": "/projects/pair",
@@ -9,14 +15,8 @@
     {
       "name": "react guitar chords",
       "short_desc": "Render chord charts and audio with react",
-      "link": "/projects/react-guitar-chords",
+      "link": "https://github.com/evan-007/react-guitar-chords",
       "date": "summer 2015"
-    },
-    {
-      "name": "Something in elixir",
-      "short_desc": "coming soon!",
-      "link": "/",
-      "date": "early 2016"
     }
   ]
 }

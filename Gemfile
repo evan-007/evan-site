@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem "bitters"
 gem "bourbon"
+gem "font-awesome-middleman"
 gem "mdl"
 gem "middleman", "~>3.4.0"
 gem "middleman-blog"
