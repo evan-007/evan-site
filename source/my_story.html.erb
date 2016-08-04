@@ -1,0 +1,123 @@
+---
+title: CV
+---
+
+<section class="section centered">
+  <article>
+    <h2>Work History</h2>
+  </article>
+  <div class="scroll-on-page">
+    <aside id="scroll-on-page-top">
+      <a class="scroll-on-page-link" href="#scroll-link-1">
+        Gweepi Medical 1/2015 - 7/2017
+      </a>
+      <a class="scroll-on-page-link" href="#scroll-link-2">
+        Coderack Consulting 10/2014 - 1/2015
+      </a>
+      <a class="scroll-on-page-link" href="#scroll-link-3">
+        Seoul Web Design 3/2014 - 7/2014
+      </a>
+      <a class="scroll-on-page-link" href="#scroll-link-4">
+        Thinkful 12/2013 - 9/2014
+      </a>
+    </aside>
+
+    <article>
+      <section>
+        <h4 id="scroll-link-1">
+          <%= link_to 'Gweepi Medical', 'http://www.gweepi.com/' %>
+        </h4>
+        <p>I was hired to take over server and mobile development at
+        this early-stage healthcare startup. The mobile app would collect
+        patient and care data and feed it into the server for analytics and tracking.
+        </p>
+        <p>The original application architecture was for a single tenant, meaning
+        that new customers would require a new application instance and database.
+        The team realized that this wasn't ideal for scaling,
+        so I planned and executed a migration to a multitenanted architecture
+        built with <%= link_to 'Apartment', 'https://github.com/influitive/apartment' %>.
+        </p>
+        <p>One of the challenges of being the sole (or primary) developer
+        in a young company is building reliable software that can respond to
+        business changes relatively easily and quickly.
+        I had very good success incorporating an
+        <%= link_to 'outside-in testing approach',
+          'https://robots.thoughtbot.com/testing-from-the-outsidein'%> based very much
+          on ideas and processes learned from thoughtbot's Upcase project. A robust
+          test suite built confidence in our system's reliability and also made
+          a few large refactors to the application architecture easier.
+        </p>
+        <p>Gweepi worked primary remotely, and I was very lucky to spend
+        the winters of 2015 and 2016 working from lovely Honolulu. I really
+        enjoyed the challenges and pace of the work, as well as the trust
+        and independance that I was given. Ultimately, the product failed to gain
+        enough adoption to continue development, despite great feedback and
+        reviews from its users.</p>
+      </section>
+      <section>
+        <h4 id="scroll-link-2">
+          <%= link_to 'Coderack Consulting', 'http://www.coderack.com/'%>
+        </h4>
+        <p>I worked on a client project built with angularJS and Ruby on Rails.</p>
+      </section>
+      <section>
+        <h4 id="scroll-link-3">
+          <%= link_to 'Seoul Web Design', 'www.seoulwebdesign.com' %>
+        </h4>
+        <p>My first real development work was porting the music site
+        <%= link_to 'DoIndie', 'doindie.co.kr' %> from Wordpress to Ruby on Rails.
+        The site had plans to add new social network-type features which
+        did not seem to be the best fit for Wordpress.
+        </p>
+        <p>The database migration was done by dumping Wordpress' db to CSV, and
+        then importing it to postgres with a rake task. The client and PM were
+        concerned about Korean search engine visibility, so I ended up
+        provisioning a Korean VPS with chef and deploying with capistrano. The
+        <%= link_to 'Deploying Rails book',
+          'https://leanpub.com/deploying_rails_applications'%> was invaluable for
+        getting this done!</p>
+        <p>In addition to porting the app to a new language, I added several
+        new 'social' features like Twitter/facebook login, the ability for users
+        to like and follow different artists and venues and integration with
+        Google maps for showing regional events.</p>
+      </section>
+      <section>
+        <h4 id="scroll-link-4">Thinkful</h4>
+        <p>Learned some stuff</p>
+        <a class="scroll-on-page-link" href="#scroll-on-page-top">Back to top</a>
+      </section>
+    </article>
+  </div>
+</section>
+
+<script type="text/javascript" charset="utf-8">
+(function (jQuery) {
+  jQuery.mark = {
+    jump: function (options) {
+      var defaults = {
+        selector: 'a.scroll-on-page-link'
+      };
+      if (typeof options == 'string') {
+        defaults.selector = options;
+      }
+
+      options = jQuery.extend(defaults, options);
+      return jQuery(options.selector).click(function (e) {
+        var jumpobj = jQuery(this);
+        var target = jumpobj.attr('href');
+        var thespeed = 1000;
+        var offset = jQuery(target).offset().top;
+        jQuery('html,body').animate({
+          scrollTop: offset
+
+        }, thespeed, 'swing');
+        e.preventDefault();
+      });
+    }
+  };
+})(jQuery);
+
+jQuery(function(){  
+  jQuery.mark.jump();
+});
+</script>
